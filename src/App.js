@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+
+function Avatar(props) {
+    return <img src={props.avatar} alt=""/>
+}
+
+function UserInfo(props) {
+    return (
+        <>
+            <Avatar avatar={props.user.avatarUrl}></Avatar>
+            <div>{props.user.name}</div>
+        </>
+    )
+     
+
+}
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const comment = {
+        date: new Date(),
+        text: 'I hope you enjoy learning React!',
+        user: {
+          name: 'Hello Kitty',
+          avatarUrl: 'https://placekitten.com/g/64/64',
+        },
+    };
+
+    return (
+        <>   
+            <UserInfo user={comment.user}></UserInfo>
+            <div>{comment.text}</div>
+            <div>{comment.date.toLocaleDateString()}</div>
+        </>
+    )
 }
+  
+
 
 export default App;
