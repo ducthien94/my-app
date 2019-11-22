@@ -27,8 +27,6 @@ function Total(props) {
 }
 
 
-
-
 function App() {
     const course = {
         name: 'Half Stack application development',

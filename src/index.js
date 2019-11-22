@@ -1,8 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import App from './App';
-import App from './Course.js';
+// import App from './Course.js';
+import App from './Course-2';
 
+
+
+
+
+
+   
 
 
 
