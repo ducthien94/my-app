@@ -1,38 +1,16 @@
 import React from 'react'
 
-function Avatar(props) {
-    return <img src={props.avatar} alt=""/>
-}
-
-function UserInfo(props) {
-    return (
-        <>
-            <Avatar avatar={props.user.avatarUrl}></Avatar>
-            <div>{props.user.name}</div>
-        </>
-    )
-     
-
-}
 
 function App() {
-    const comment = {
-        date: new Date(),
-        text: 'I hope you enjoy learning React!',
-        user: {
-          name: 'Hello Kitty',
-          avatarUrl: 'https://placekitten.com/g/64/64',
-        },
-    };
-
-    return (
-        <>   
-            <UserInfo user={comment.user}></UserInfo>
-            <div>{comment.text}</div>
-            <div>{comment.date.toLocaleDateString()}</div>
-        </>
-    )
-}
+    function handleClick(e, message) {
+      console.log('You ' + message)
+      console.log('this', this) //undefined
+      console.log('this', e.target)
+    }
+    return <h1 onClick={e => handleClick(e, 'clicked')}>Hello World</h1>
+   }
+   
+   
   
 
 
