@@ -1,14 +1,19 @@
 import React from 'react'
 
 
-function App() {
-    function handleClick(e, message) {
-      console.log('You ' + message)
-      console.log('this', this) //undefined
-      console.log('this', e.target)
-    }
-    return <h1 onClick={e => handleClick(e, 'clicked')}>Hello World</h1>
-   }
+class Header extends React.Component {
+  render () {
+    console.log(this) // this là class Header
+    return <h1>Hello {this.props.name}</h1>
+  }
+ }
+  
+ class App extends React.Component {
+  render () {
+    return <Header name="World"></Header>
+  }
+ }
+ 
    
    
   
